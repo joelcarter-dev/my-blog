@@ -7,29 +7,20 @@ import Img from 'gatsby-image'
 const BlogFeed = (props) => {
   return (
     <section className="blog-feed">
-
+      
       <div className="feed-title">
         <h1>Latest Posts</h1>
       </div>
       {props.postData.edges
         .map(({ node: post }) => (
           <div className="blog-preview-holder" key={post.id}>
-          
-          {console.log(post)}
-              <img
-                src={post.frontmatter.featuredImage}
-                style={{
-                  display: 'block',
-                  marginBottom: '1rem',
-                  marginTop: '1rem',
-                  width: '100%',
-                  height: 'auto'
-                }}
-                alt=""
-            />
-            <div className="blog-preview">
+        
+            <div 
+              className="blog-preview"
+              style={{backgroundImage: `url(${post.frontmatter.featuredImage})` }}>
+            >
               <h2 className="title">
-                <Link className="has-text-primary" to={post.fields.slug}>
+                <Link to={post.fields.slug}>
                   {post.frontmatter.title}
                 </Link>
               </h2>
@@ -39,13 +30,11 @@ const BlogFeed = (props) => {
               <Link className="read-more" to={post.fields.slug}>
                 Keep Reading →
               </Link>
+              <small>{post.frontmatter.date}</small>
             </div>
-            <div className="date-holder">
-              <small className="date">{post.frontmatter.date}</small>
-            </div>
+            
           </div>
         ))}
-          
     </section>
   )
 }

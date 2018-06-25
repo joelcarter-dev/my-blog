@@ -8,6 +8,7 @@ description: >-
 tags:
   - flavor
   - tasting
+featuredImage: /img/9bcc02870880a7a57ff4eb2dcdbe78e3.jpg
 ---
 ![](/img/9bcc02870880a7a57ff4eb2dcdbe78e3.jpg)
 

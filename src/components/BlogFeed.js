@@ -16,7 +16,17 @@ const BlogFeed = (props) => {
           <div className="blog-preview-holder" key={post.id}>
           
           {console.log(post)}
-          
+              <img
+                src={post.frontmatter.featuredImage}
+                style={{
+                  display: 'block',
+                  marginBottom: '1rem',
+                  marginTop: '1rem',
+                  width: '100%',
+                  height: 'auto'
+                }}
+                alt=""
+            />
             <div className="blog-preview">
               <h2 className="title">
                 <Link className="has-text-primary" to={post.fields.slug}>

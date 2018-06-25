@@ -16,7 +16,6 @@ const BlogFeed = (props) => {
           <div className="blog-preview-holder" key={post.id}>
           
           {console.log(post)}
-          <Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes} />
           
             <div className="blog-preview">
               <h2 className="title">

@@ -20,40 +20,56 @@
       .blog-preview-holder
         //max-width: 800px
         //float: right
+        height: 200px
+        overflow: hidden
         box-sizing: border-box
         background-color: #c7c7c7
-        .blog-preview
+        margin-bottom: 100px
+        position: relative
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center
+        .overlay
           width: 100%
           height: 100%
-          position: relative
-          padding: 30px
-          background-repeat: no-repeat
-          background-size: cover
-          background-position: center
-        a, p, small
-          text-decoration: none
-          color: white
-          text-transform: none
-        h2, p, a
-          display: block
-          margin: 0 auto
-          text-align: center
-        p
-          padding: 30px
-        h2
-          font-family: 'Raleway', sans-serif
-          letter-spacing: 2px
-          text-transform: uppercase
-        small
           position: absolute
-          bottom: 0
-          left: 0
-          padding: 20px
-        .read-more
-          position: absolute
-          bottom: 0
+          top: 0
           left: 0
           right: 0
-          padding: 20px
-
-          
+          background-color: #00000045
+        .blog-preview
+          width: 95%
+          height: 200px - 60px
+          //position: relative
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          z-index: 1
+          padding: 30px
+          a, p, small
+            text-decoration: none
+            color: white
+            text-transform: none
+          h2, p, a
+            display: block
+            margin: 0 auto
+            text-align: center
+          p
+            padding: 10px
+          a
+            font-family: 'Raleway', sans-serif
+            letter-spacing: 4px
+            text-transform: uppercase
+          small
+            position: absolute
+            bottom: 0
+            left: 0
+            padding: 10px
+          .read-more
+            position: absolute
+            bottom: 0
+            left: 0
+            right: 0
+            padding: 20px
+            font-weight: bold

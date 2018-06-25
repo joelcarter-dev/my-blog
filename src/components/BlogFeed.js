@@ -13,12 +13,13 @@ const BlogFeed = (props) => {
       </div>
       {props.postData.edges
         .map(({ node: post }) => (
-          <div className="blog-preview-holder" key={post.id}>
-        
-            <div 
-              className="blog-preview"
-              style={{backgroundImage: `url(${post.frontmatter.featuredImage})` }}>
-            >
+          <div 
+            className="blog-preview-holder" key={post.id}
+            style={{backgroundImage: `url(${post.frontmatter.featuredImage})` }}
+          >
+
+            <div className="blog-preview">
+            
               <h2 className="title">
                 <Link to={post.fields.slug}>
                   {post.frontmatter.title}
@@ -31,8 +32,9 @@ const BlogFeed = (props) => {
                 Keep Reading →
               </Link>
               <small>{post.frontmatter.date}</small>
+
             </div>
-            
+            <div className="overlay"></div>
           </div>
         ))}
     </section>

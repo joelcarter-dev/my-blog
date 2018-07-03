@@ -1,5 +1,6 @@
 .blog-view
   height: 100vh
+  overflow-y: scroll
   *
     text-align: center
   .header
@@ -28,9 +29,17 @@
     margin: 0 auto
     min-height: 50vh
     margin-top: -100px
-    overflow-y: scroll
     p 
       margin-top: 0
-      
-      
-      
+    img,
+    .gatsby-resp-image-wrapper,
+    .gatsby-resp-image-link,
+    span
+      max-width: 90%
+      max-height: 1000px
+      background-repeat: no-repeat
+      background-size: cover
+      background-position: center
+      margin: 0 auto !important
+      left: 0
+      right: 0

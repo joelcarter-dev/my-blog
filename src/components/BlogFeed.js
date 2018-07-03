@@ -15,9 +15,11 @@ const BlogFeed = (props) => {
         .map(({ node: post }) => (
           <div 
             className="blog-preview-holder" key={post.id}
-            style={{backgroundImage: `url(${post.frontmatter.featuredImage})` }}
+            //style={{backgroundImage: `url(${post.frontmatter.featuredImage})` }}
           >
-
+          
+          <Img resolutions={post.frontmatter.featuredImage}/>
+          
             <div className="blog-preview">
             
               <h2 className="title">

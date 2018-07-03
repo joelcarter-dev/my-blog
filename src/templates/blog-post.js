@@ -5,6 +5,8 @@ import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import Content, { HTMLContent } from '../components/Content'
 
+import Img from 'gatsby-image'
+
 export const BlogPostTemplate = ({
   content,
   contentComponent,
@@ -20,7 +22,11 @@ export const BlogPostTemplate = ({
     <section className="blog-view">
       {helmet || ''}
 
-        <div className="header" style={{backgroundImage: `url(${featuredImage})` }}>
+        <div className="header" 
+       
+        //style={{backgroundImage: `url(${featuredImage})` }}
+        >
+         {featuredImage && <Img resolutions={featuredImage.childImageSharp.resolutions} />}
           <div className="title-holder">
             <h1 className="title">
               {title}
@@ -52,7 +58,7 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  featuredImage: PropTypes.string,
+  featuredImage: PropTypes.object,
   helmet: PropTypes.instanceOf(Helmet),
 }
 
@@ -90,7 +96,18 @@ export const pageQuery = graphql`
         title
         description
         tags
-        featuredImage
+        
+          featuredImage {
+            childImageSharp {
+              resolutions(width: 400) {
+                width
+                height
+                src
+                srcSet
+              }
+            }
+          }
+          
       }
     }
   }

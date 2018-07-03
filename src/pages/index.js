@@ -32,60 +32,60 @@ IndexPage.propTypes = {
   }),
 }
 
+// export const pageQuery = graphql`
+//   query IndexQuery {
+//     allMarkdownRemark(
+//       sort: { order: DESC, fields: [frontmatter___date] },
+//       filter: { frontmatter: { templateKey: { eq: "blog-post" } }}
+//     ) {
+//       edges {
+//         node {
+//           excerpt(pruneLength: 100)
+//           id
+//           fields {
+//             slug
+//           }
+//           frontmatter {
+//             title
+//             templateKey
+//             date(formatString: "MMMM DD, YYYY")
+//             featuredImage
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
+
 export const pageQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] },
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } }}
-    ) {
-      edges {
-        node {
-          excerpt(pruneLength: 100)
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            templateKey
-            date(formatString: "MMMM DD, YYYY")
-            featuredImage
+query IndexQuery {
+  allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {templateKey: {eq: "blog-post"}}}) {
+    edges {
+      node {
+        excerpt(pruneLength: 400)
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          templateKey
+          date(formatString: "MMMM DD, YYYY")
+          tags
+          featuredImage {
+            childImageSharp {
+              resolutions(width: 400) {
+                width
+                height
+                src
+                srcSet
+              }
+            }
           }
         }
       }
     }
   }
-`
+}
 
-// export const pageQuery = graphql`
-  // query IndexQuery {
-  //   allMarkdownRemark(
-  //     sort: { order: DESC, fields: [frontmatter___date] },
-  //     filter: { frontmatter: { templateKey: { eq: "blog-post" } }}
-  //   ) {
-  //     edges {
-  //       node {
-  //         excerpt(pruneLength: 400)
-  //         id
-  //         fields {
-  //           slug
-  //         }
-  //         frontmatter {
-  //           title
-  //           templateKey
-  //           date(formatString: "MMMM DD, YYYY")
-  //           tags
-  //           featuredImage {
-  //              childImageSharp{
-  //                   sizes(maxWidth: 1000) {
-  //                       ...GatsbyImageSharpSizes
-  //                   }
-  //               }
-  //           }
-            
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
-// `
+`

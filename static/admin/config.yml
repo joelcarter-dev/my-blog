@@ -21,8 +21,8 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
       # - {label: "FeaturedImage", name: "featuredImage", widget: "image"}
-      - label: "Image"
-        name: "image"
+      - label: "FeaturedImage"
+        name: "featuredImage"
         widget: "custompathimage"
         customMediaPath: "../img/"
         rawMediaPath: "https://raw.githubusercontent.com/Dwaxy/my-blog/src/pages/img/"

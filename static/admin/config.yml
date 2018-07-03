@@ -25,4 +25,4 @@ collections:
         name: "image"
         widget: "custompathimage"
         customMediaPath: "../img/"
-        rawMediaPath: "https://raw.githubusercontent.com/user/repo/master/images/"
+        rawMediaPath: "https://raw.githubusercontent.com/Dwaxy/my-blog/src/pages/img/"

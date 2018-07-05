@@ -20,9 +20,9 @@ collections:
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
-      # - {label: "FeaturedImage", name: "featuredImage", widget: "image"}
-      - label: "FeaturedImage"
-        name: "featuredImage"
-        widget: "custompathimage"
-        customMediaPath: "../img/"
-        rawMediaPath: "https://github.com/Dwaxy/my-blog/tree/master/src/pages/img"
+      - {label: "FeaturedImage", name: "featuredImage", widget: "image"}
+      # - label: "FeaturedImage"
+      #   name: "featuredImage"
+      #   widget: "custompathimage"
+      #   customMediaPath: "../img/"
+      #   rawMediaPath: "https://github.com/Dwaxy/my-blog/tree/master/src/pages/img"

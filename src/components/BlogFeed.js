@@ -13,14 +13,9 @@ const BlogFeed = (props) => {
       </div>
       {props.postData.edges
         .map(({ node: post }) => (
-          <div 
-            className="blog-preview-holder" key={post.id}
-            // style={{backgroundImage: `url(${post.frontmatter.featuredImage})` }}
-          >
-          {console.log(post.frontmatter)}
+          <div className="blog-preview-holder" key={post.id}>
           
-          <Img resolutions={post.frontmatter.featuredImage.childImageSharp.resolutions} />
-          
+            <Img sizes={post.frontmatter.featuredImage.childImageSharp.sizes} />
             <div className="blog-preview">
             
               <h2 className="title">

@@ -7,6 +7,7 @@ import Content, { HTMLContent } from '../components/Content'
 
 import Img from 'gatsby-image'
 
+
 export const BlogPostTemplate = ({
   content,
   contentComponent,
@@ -22,21 +23,22 @@ export const BlogPostTemplate = ({
     <section className="blog-view">
       {helmet || ''}
 
-        <div className="header" 
-       
-        //style={{backgroundImage: `url(${featuredImage})` }}
-        >
-         {featuredImage && <Img resolutions={featuredImage.childImageSharp.resolutions} />}
+        <div className="header">
+         {featuredImage && <Img sizes={featuredImage.childImageSharp.sizes} />}
+        <Link to="/" id="arrow" />
+         <div className="overlay"></div>
           <div className="title-holder">
-            <h1 className="title">
-              {title}
-            </h1>
-            <p>{description}</p>
+            <div className="holder">
+              <h1 className="title">
+                {title}
+              </h1>
+              <p>{description}</p>
+            </div>
           </div>
         </div>
           <PostContent content={content} className="post-content"/>
           {tags && tags.length ? (
-            <div style={{ marginTop: `4rem` }}>
+            <div style={{ marginTop: `4rem` }} className="tag-holder">
               <h4>Tags</h4>
               <ul className="taglist">
                 {tags.map(tag => (
@@ -97,16 +99,17 @@ export const pageQuery = graphql`
         description
         tags
         
-          featuredImage {
-            childImageSharp {
-              resolutions(width: 400) {
-                width
-                height
-                src
-                srcSet
-              }
+        featuredImage {
+          childImageSharp {
+            sizes(maxWidth: 1000 maxHeight: 500) {
+              base64
+              aspectRatio
+              src
+              srcSet
+              sizes
             }
           }
+        }
           
       }
     }

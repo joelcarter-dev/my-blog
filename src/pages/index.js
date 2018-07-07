@@ -32,31 +32,6 @@ IndexPage.propTypes = {
   }),
 }
 
-// export const pageQuery = graphql`
-//   query IndexQuery {
-//     allMarkdownRemark(
-//       sort: { order: DESC, fields: [frontmatter___date] },
-//       filter: { frontmatter: { templateKey: { eq: "blog-post" } }}
-//     ) {
-//       edges {
-//         node {
-//           excerpt(pruneLength: 100)
-//           id
-//           fields {
-//             slug
-//           }
-//           frontmatter {
-//             title
-//             templateKey
-//             date(formatString: "MMMM DD, YYYY")
-//             featuredImage
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
-
 export const pageQuery = graphql`
 query IndexQuery {
   allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {templateKey: {eq: "blog-post"}}}) {
@@ -74,11 +49,12 @@ query IndexQuery {
           tags
           featuredImage {
             childImageSharp {
-              resolutions(width: 400) {
-                width
-                height
+              sizes(maxWidth: 1000 maxHeight: 500) {
+                base64
+                aspectRatio
                 src
                 srcSet
+                sizes
               }
             }
           }

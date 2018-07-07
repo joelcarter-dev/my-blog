@@ -8,3 +8,5 @@ tags:
 featuredImage: ../img/9bcc02870880a7a57ff4eb2dcdbe78e3.jpg
 ---
 bla bla (yeet)
+
+![null](/img/9bcc02870880a7a57ff4eb2dcdbe78e3.jpg)

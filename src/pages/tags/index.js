@@ -2,17 +2,16 @@ import React from 'react'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
+import '../../layouts/tags.sass'
 
 const TagsPage = ({
   data: { allMarkdownRemark: { group }, site: { siteMetadata: { title } } },
 }) => (
-  <section className="section">
+  <section className="tag-view">
     <Helmet title={`Tags | ${title}`} />
-    <div className="">
-      <div className="">
-        <div
-          className=""
-        >
+    <div className="tagpage-holder">
+
+        <div className="">
           <h1 className="title">Tags</h1>
           <ul className="taglist">
             {group.map(tag => (
@@ -23,8 +22,11 @@ const TagsPage = ({
               </li>
             ))}
           </ul>
+          <div className="all">
+            <Link to="/">Back to Home →</Link>
+          </div>
         </div>
-      </div>
+
     </div>
   </section>
 )

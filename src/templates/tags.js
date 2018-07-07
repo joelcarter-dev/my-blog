@@ -2,13 +2,15 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 
+import '../layouts/tags.sass'
+
 class TagRoute extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges
     const postLinks = posts.map(post => (
-      <li key={post.node.fields.slug}>
+      <li key={post.node.fields.slug} className="post-list">
         <Link to={post.node.fields.slug}>
-          <h2 className="is-size-2">{post.node.frontmatter.title}</h2>
+          {post.node.frontmatter.title}
         </Link>
       </li>
     ))
@@ -20,21 +22,17 @@ class TagRoute extends React.Component {
     } tagged with “${tag}”`
 
     return (
-      <section className="section">
+      <section className="tag-view">
         <Helmet title={`${tag} | ${title}`} />
-        <div className="container content">
-          <div className="columns">
-            <div
-              className="column is-10 is-offset-1"
-              style={{ marginBottom: '6rem' }}
-            >
-              <h3 className="title is-size-4 is-bold-light">{tagHeader}</h3>
-              <ul className="taglist">{postLinks}</ul>
-              <p>
-                <Link to="/tags/">Browse all tags</Link>
-              </p>
-            </div>
+        <div className="tagpage-holder">
+        
+          <h3>{tagHeader}</h3>
+          <ul>{postLinks}</ul>
+          <div className="all">
+            <Link to="/tags/">Browse all tags →</Link>
+            <Link to="/">Back to Home →</Link>
           </div>
+            
         </div>
       </section>
     )

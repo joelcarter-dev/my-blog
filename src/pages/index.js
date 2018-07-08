@@ -7,18 +7,28 @@ import BlogFeed from '../components/BlogFeed.js'
 export default class IndexPage extends React.Component {
   render() {
     const { data } = this.props
-
+      
     return (
       <section className="home">
+        <section id="about">
         
-        <div className="left">
-          <BlogFeed postData={data.allMarkdownRemark}/>
-        </div>
-        
-        <div className="right">
-          {/*<HomeSidebar />*/}
-        </div>
-            
+          <div className="links">
+            <ul>
+              {data.allMarkdownRemark.edges.map(({ node: item }, i) => {
+                return (
+                <li 
+                  key={item.id}
+                >
+                  {item.frontmatter.type.toString()}
+                </li>
+                )
+              })}
+            </ul>
+          </div>
+        </section>
+
+        <BlogFeed postData={data.allMarkdownRemark}/>
+         
       </section>
     )
   }
@@ -47,6 +57,7 @@ query IndexQuery {
           templateKey
           date(formatString: "MMMM DD, YYYY")
           tags
+          type
           featuredImage {
             childImageSharp {
               sizes(maxWidth: 1000 maxHeight: 500) {

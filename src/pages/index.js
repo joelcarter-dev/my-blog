@@ -1,28 +1,48 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import BlogFeed from '../components/BlogFeed.js'
-// import PostTimeline from '../components/PostTimeline.js'
-// import HomeSidebar from '../components/HomeSidebar.js'
+import { uniqBy, sortBy } from 'lodash'
 
 export default class IndexPage extends React.Component {
+    constructor(props) {
+    super(props);
+    this.state = {
+      postTypes: this.setData()
+    };    
+  }
+
+  setData = () => {
+    let posts = []
+    this.props.data.allMarkdownRemark.edges.map( ({node: item }, i) => {
+      posts.push(item)
+    })
+    let sortedPosts = uniqBy(posts, (i)=> {return i.frontmatter.type})
+    console.log(sortedPosts)
+    return sortedPosts
+  }
+  
+  sortFeed = (items) => {
+    let category = sortBy(this.state.postTypes, items)
+    console.log(items, category)
+  }
+    
   render() {
     const { data } = this.props
-      
+    
     return (
       <section className="home">
         <section id="about">
         
           <div className="links">
             <ul>
-              {data.allMarkdownRemark.edges.map(({ node: item }, i) => {
-                return (
-                <li 
-                  key={item.id}
-                >
-                  {item.frontmatter.type.toString()}
-                </li>
-                )
-              })}
+              <li onClick={this.sortFeed}>
+                latest posts
+              </li>
+              {this.state.postTypes.map( (item, i) => (
+                <li key={i} onClick={this.sortFeed.bind(this, item.frontmatter.type)}>
+                  {item.frontmatter.type}
+                </li> 
+              ))}
             </ul>
           </div>
         </section>

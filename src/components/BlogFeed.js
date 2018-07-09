@@ -7,7 +7,6 @@ import Img from 'gatsby-image'
 const BlogFeed = (props) => {
   return (
     <section className="blog-feed">
-      <div className="outline"></div>
       <div className="feed-title">
         <h1>Latest Posts</h1>
       </div>

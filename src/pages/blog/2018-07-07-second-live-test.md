@@ -6,6 +6,7 @@ description: the second live test post
 tags:
   - test
 featuredImage: ../img/dsc05028.jpg
+type: art
 ---
 And lets hope the last. Everything worked out in the end!
 

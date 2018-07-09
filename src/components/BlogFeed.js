@@ -8,9 +8,9 @@ const BlogFeed = (props) => {
   return (
     <section className="blog-feed">
       <div className="feed-title">
-        <h1>Latest Posts</h1>
+        <h1>{props.title} posts</h1>
       </div>
-      {props.postData.edges
+      {props.postData
         .map(({ node: post }) => (
           <div className="blog-preview-holder" key={post.id}>
           

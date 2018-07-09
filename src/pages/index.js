@@ -7,7 +7,9 @@ export default class IndexPage extends React.Component {
     constructor(props) {
     super(props);
     this.state = {
-      postTypes: this.setData()
+      postTypes: this.setData(),
+      blogFeed:  this.props.data.allMarkdownRemark.edges,
+      currentType: "Latest Posts"
     };    
   }
 
@@ -16,14 +18,20 @@ export default class IndexPage extends React.Component {
     this.props.data.allMarkdownRemark.edges.map( ({node: item }, i) => {
       posts.push(item)
     })
-    let sortedPosts = uniqBy(posts, (i)=> {return i.frontmatter.type})
-    console.log(sortedPosts)
-    return sortedPosts
+    let category = uniqBy(posts, (i)=> {return i.frontmatter.type})
+    return category
   }
   
-  sortFeed = (items) => {
-    let category = sortBy(this.state.postTypes, items)
-    console.log(items, category)
+  sortFeed = (typeName) => {
+    let sortedPosts = this.props.data.allMarkdownRemark.edges
+    if (typeName !== "latest posts") {
+      sortedPosts = this.props.data.allMarkdownRemark.edges.filter(
+        (item) => { 
+          return item.node.frontmatter.type === typeName 
+        }
+      )
+    }
+    this.setState({blogFeed: sortedPosts, currentType: typeName})
   }
     
   render() {
@@ -35,7 +43,7 @@ export default class IndexPage extends React.Component {
         
           <div className="links">
             <ul>
-              <li onClick={this.sortFeed}>
+              <li onClick={this.sortFeed.bind(this, "latest posts")}>
                 latest posts
               </li>
               {this.state.postTypes.map( (item, i) => (
@@ -47,7 +55,7 @@ export default class IndexPage extends React.Component {
           </div>
         </section>
 
-        <BlogFeed postData={data.allMarkdownRemark}/>
+        <BlogFeed postData={/*data.allMarkdownRemark*/ this.state.blogFeed} title={this.state.currentType}/>
          
       </section>
     )

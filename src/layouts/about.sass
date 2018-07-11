@@ -2,29 +2,38 @@
   position: fixed
   top: 0
   height: 40vh
-  min-height: 300px
+  min-height: 360px
   background-color: $mainShade
   width: 100%
   box-sizing: border-box
-  .links
-    position: relative
-    top: 100%
-    background-color: $mainShade
+  overflow: hidden
+  background-repeat: no-repeat
+  background-size: cover
+  .overlay
+    position: absolute
+    height: 100%
     width: 100%
-    margin: 0 auto
-    height: 60px
-    color: white
-    ul
-      width: 85%
-      height: 100%
+    top: 0
+    background-color: $mainShade
+    z-index: 2
+    .links
+      position: relative
+      top: 100%
       margin: 0 auto
-      padding: 0
-      display: flex
-      justify-content: space-evenly
-      list-style: none
-      li
-        padding: 20px
-        font-size: 1em
-        text-transform: uppercase
-        cursor: pointer
-        letter-spacing: 3px
+      color: white
+      ul
+        height: 60px
+        width: 100%
+        margin: 0 auto
+        padding: 0
+        display: flex
+        justify-content: space-evenly
+        list-style: none
+        position: absolute
+        top: calc(100% - 60px)
+        li
+          padding: 20px
+          font-size: 1em
+          text-transform: uppercase
+          cursor: pointer
+          letter-spacing: 3px

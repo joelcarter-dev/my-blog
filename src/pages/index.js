@@ -4,6 +4,8 @@ import BlogFeed from '../components/BlogFeed.js'
 import About from '../components/About.js'
 import { uniqBy, sortBy } from 'lodash'
 
+import headerImage from '../img/36849446_1974293312601722_925401964357877760_n.jpg'
+
 export default class IndexPage extends React.Component {
     constructor(props) {
     super(props);
@@ -48,7 +50,10 @@ export default class IndexPage extends React.Component {
     return (
       <section className="home">
         <About />
-        <section id="about">
+        <section id="about"
+          style={{backgroundImage: `url(${headerImage})` }}
+        >
+        <div className="overlay">
           <div className="links">
             <ul>
               <li onClick={this.sortFeed.bind(this, "latest")}>
@@ -61,6 +66,8 @@ export default class IndexPage extends React.Component {
               ))}
             </ul>
           </div>
+        
+        </div>
         </section>
 
         <BlogFeed 

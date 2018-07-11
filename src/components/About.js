@@ -1,6 +1,6 @@
 import React from 'react';
 
-const siteTitle = "Site Title"
+const siteTitle = "Strange Words"
 
 const titles = [
   "Web Developer",
@@ -10,7 +10,7 @@ const titles = [
 
 const blurb = `
 I'm a guy with some interesting projects and some strange ideas. I built this site to talk about them. 
-Stay a while; you might find something you’d like to talk about too.
+Take a look - you might find something you’d like to talk about too.
 `
 
 export const About = (props) => {

@@ -10,7 +10,8 @@ export default class IndexPage extends React.Component {
     this.state = {
       postTypes: this.setData(),
       blogFeed:  this.props.data.allMarkdownRemark.edges,
-      currentType: "Latest"
+      currentType: "Latest",
+      newest: true
     };    
   }
 
@@ -34,6 +35,12 @@ export default class IndexPage extends React.Component {
     }
     this.setState({blogFeed: sortedPosts, currentType: typeName})
   }
+  
+  toggleOrder = () => {
+    let posts = this.state.blogFeed
+    posts.reverse()
+    this.setState({blogFeed: posts, newest: !this.state.newest})
+  }
     
   render() {
     const { data } = this.props
@@ -56,8 +63,13 @@ export default class IndexPage extends React.Component {
           </div>
         </section>
 
-        <BlogFeed postData={this.state.blogFeed} title={this.state.currentType}/>
-         
+        <BlogFeed 
+          postData={this.state.blogFeed} 
+          title={this.state.currentType}
+          toggleOrder={this.toggleOrder}
+          newest={this.state.newest}
+        />
+
       </section>
     )
   }

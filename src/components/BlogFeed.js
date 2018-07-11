@@ -9,6 +9,22 @@ const BlogFeed = (props) => {
     <section className="blog-feed">
       <div className="feed-title">
         <h1>{props.title} posts</h1>
+        {props.postData.length > 1 &&
+          <div className="order-buttons">
+            <span 
+              className={props.newest ? "on" : "off"}
+              onClick={props.toggleOrder}
+            >
+              Oldest
+            </span>
+            <span 
+              className={props.newest ? "off" : "on"}
+              onClick={props.toggleOrder}
+            >
+              Newest
+            </span>
+          </div>
+        }
       </div>
       {props.postData
         .map(({ node: post }) => (
@@ -34,6 +50,7 @@ const BlogFeed = (props) => {
             <div className="overlay"></div>
           </div>
         ))}
+              
     </section>
   )
 }

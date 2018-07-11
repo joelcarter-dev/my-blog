@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import BlogFeed from '../components/BlogFeed.js'
+import About from '../components/About.js'
 import { uniqBy, sortBy } from 'lodash'
 
 export default class IndexPage extends React.Component {
@@ -9,7 +10,7 @@ export default class IndexPage extends React.Component {
     this.state = {
       postTypes: this.setData(),
       blogFeed:  this.props.data.allMarkdownRemark.edges,
-      currentType: "Latest Posts"
+      currentType: "Latest"
     };    
   }
 
@@ -24,7 +25,7 @@ export default class IndexPage extends React.Component {
   
   sortFeed = (typeName) => {
     let sortedPosts = this.props.data.allMarkdownRemark.edges
-    if (typeName !== "latest posts") {
+    if (typeName !== "latest") {
       sortedPosts = this.props.data.allMarkdownRemark.edges.filter(
         (item) => { 
           return item.node.frontmatter.type === typeName 
@@ -39,11 +40,11 @@ export default class IndexPage extends React.Component {
     
     return (
       <section className="home">
+        <About />
         <section id="about">
-        
           <div className="links">
             <ul>
-              <li onClick={this.sortFeed.bind(this, "latest posts")}>
+              <li onClick={this.sortFeed.bind(this, "latest")}>
                 latest posts
               </li>
               {this.state.postTypes.map( (item, i) => (
@@ -55,7 +56,7 @@ export default class IndexPage extends React.Component {
           </div>
         </section>
 
-        <BlogFeed postData={/*data.allMarkdownRemark*/ this.state.blogFeed} title={this.state.currentType}/>
+        <BlogFeed postData={this.state.blogFeed} title={this.state.currentType}/>
          
       </section>
     )

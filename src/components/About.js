@@ -1,6 +1,6 @@
 import React from 'react';
 
-const siteTitle = "Strange Words"
+const siteTitle = "Tiny Words"
 
 const titles = [
   "Web Developer",

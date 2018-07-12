@@ -14,7 +14,7 @@ export default class IndexPage extends React.Component {
       blogFeed:  this.props.data.allMarkdownRemark.edges,
       currentType: "Latest",
       newest: true
-    };    
+    };   
   }
 
   setData = () => {
@@ -25,7 +25,6 @@ export default class IndexPage extends React.Component {
     let category = uniqBy(posts, (i)=> {return i.frontmatter.type})
     return category
   }
-  
   sortFeed = (typeName) => {
     let sortedPosts = this.props.data.allMarkdownRemark.edges
     if (typeName !== "latest") {
@@ -95,7 +94,6 @@ query IndexQuery {
   allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, filter: {frontmatter: {templateKey: {eq: "blog-post"}}}) {
     edges {
       node {
-        excerpt(pruneLength: 400)
         id
         fields {
           slug
@@ -104,6 +102,7 @@ query IndexQuery {
           title
           templateKey
           date(formatString: "MMMM DD, YYYY")
+          description
           tags
           type
           featuredImage {

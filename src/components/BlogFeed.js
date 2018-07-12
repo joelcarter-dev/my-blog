@@ -39,7 +39,7 @@ const BlogFeed = (props) => {
                 </Link>
               </h2>
               <p className="preview">
-                {post.excerpt}
+                {post.frontmatter.description}
               </p>
               <Link className="read-more" to={post.fields.slug}>
                 Keep Reading →

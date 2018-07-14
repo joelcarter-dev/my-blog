@@ -12,13 +12,13 @@ const BlogFeed = (props) => {
         {props.postData.length > 1 &&
           <div className="order-buttons">
             <span 
-              className={props.newest ? "on" : "off"}
+              className={props.newest ? "off" : "on"}
               onClick={props.toggleOrder}
             >
               Oldest
             </span>
             <span 
-              className={props.newest ? "off" : "on"}
+              className={props.newest ? "on" : "off"}
               onClick={props.toggleOrder}
             >
               Newest

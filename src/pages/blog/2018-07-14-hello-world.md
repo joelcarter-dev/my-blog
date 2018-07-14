@@ -7,7 +7,7 @@ tags:
   - announcement
   - hello world
 type: news
-featuredImage: ../img/unhappy.jpg
+featuredImage: ../img/img_20180425_112934.jpg
 ---
 I don't know how you found your way here, but you have. For some reason you thought this obscure site worth clicking on, and for that, thanks. What you've found is my little place to write about things - primarily my tiny house build, and things like it. Things that I want to remember, or shout into the void of the web about. And things I find interesting.
 

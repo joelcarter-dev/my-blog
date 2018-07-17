@@ -1,8 +1,25 @@
 module.exports = {
   siteMetadata: {
     title: 'Strange Words Blog',
+    siteUrl: `https://tinywords.netlify.com`,
   },
   plugins: [
+  
+    {
+      resolve: `gatsby-plugin-sitemap`
+    },
+  
+    // {
+    //   resolve: 'gatsby-plugin-purify-css',
+    //   options: {
+    //     /* Defaults */
+    //     styleId: 'gatsby-inlined-css',
+    //     purifyOptions: {
+    //       info: true,
+    //       minify: true
+    //     }
+    //   }
+    // },
   
     {
       resolve: `gatsby-plugin-google-analytics`,

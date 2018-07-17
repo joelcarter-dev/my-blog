@@ -113,6 +113,8 @@ query IndexQuery {
                 src
                 srcSet
                 sizes
+                srcWebp
+                srcSetWebp
               }
             }
           }

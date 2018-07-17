@@ -5,9 +5,10 @@ module.exports = {
   },
   plugins: [
   
-    {
-      resolve: `gatsby-plugin-sitemap`
-    },
+    
+    `gatsby-plugin-sitemap`,
+    'gatsby-plugin-robots-txt',
+  
   
     // {
     //   resolve: 'gatsby-plugin-purify-css',

@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 import './all.sass'
 
 const desc = `
- A blog about tiny houses, painting, web development, and more.
+ A blog about my tiny house, painting, web development, and more.
 `
 
 const TemplateWrapper = ({ children }) => (

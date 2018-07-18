@@ -7,3 +7,4 @@ public/
 static/admin/*.bundle.*
 .DS_Store
 yarn-error.log
+src/pages/blog/2018-07-17-building-a-tiny-house-without-a-trailer.md

@@ -27,9 +27,13 @@ We ended up getting another load of mix, coming to a total under $100 NZD. Now t
 
 Now now, I know you can only go so far with it stuck in the ground. 
 
-**"But you can't _move_ it!"** I'm not going to. Were you? Well, not the "trailer" anyway. Go and read "Building a tiny house with a trailer.
+## "But you can't _move_ it!" 
 
-**"It can be worth saving, you can go bigger in NZ if its classed as a vehicle." **Sure, if you want to travel. But you see, I'm a broke ass starving artist. And I'm impatient.
+I'm not going to. Were you? Well, not the "trailer" anyway. Go and read "Building a tiny house with a trailer.
+
+## "It can be worth saving, you can go bigger in NZ if its classed as a vehicle." 
+
+Sure, if you want to travel. But you see, I'm a broke ass starving artist. And I'm impatient.
 
 Going with a fixed foundation is actually a great compromise to cost and both of these questions. You see, a tiny house is, well, tiny.** If you bolt the damn thing on, you can bolt it off again. **And put it on a truck you hired. Then bolt it on to a new foundation. Someplace else. For less than $100 NZD (I don't know about the truck part). If you dig it yourself.
 

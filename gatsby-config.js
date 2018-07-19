@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Strange Words Blog',
+    description: `A blog about what I get up to`,
     siteUrl: `https://tinywords.netlify.com`,
   },
   plugins: [
@@ -9,6 +10,9 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     'gatsby-plugin-robots-txt',
   
+    {
+      resolve: `gatsby-plugin-feed`
+    },
   
     // {
     //   resolve: 'gatsby-plugin-purify-css',
@@ -21,6 +25,14 @@ module.exports = {
     //     }
     //   }
     // },
+    
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        //mailchimp list endpoint
+        endpoint: 'https://jcicode.us18.list-manage.com/subscribe/post?u=02172f0878bd5957e77543f09&amp;id=b2369b9795', 
+      },
+    },
   
     {
       resolve: `gatsby-plugin-google-analytics`,

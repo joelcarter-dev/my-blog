@@ -7,7 +7,7 @@ import { uniqBy, sortBy } from 'lodash'
 import headerImage from '../img/36849446_1974293312601722_925401964357877760_n.jpg'
 
 export default class IndexPage extends React.Component {
-    constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       postTypes: this.setData(),

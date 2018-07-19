@@ -4,6 +4,7 @@ import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import Content, { HTMLContent } from '../components/Content'
+import Subscribe from '../components/Subscribe'
 
 import Img from 'gatsby-image'
 
@@ -37,6 +38,9 @@ export const BlogPostTemplate = ({
           </div>
         </div>
           <PostContent content={content} className="post-content"/>
+          
+          <Subscribe />
+          
           {tags && tags.length ? (
             <div style={{ marginTop: `4rem` }} className="tag-holder">
               <h4>Tags</h4>

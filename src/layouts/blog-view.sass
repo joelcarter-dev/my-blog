@@ -62,6 +62,53 @@
       box-sizing: border-box
       max-height: 1000px
       padding: 30px
+  #subscribe
+    h2
+      font-weight: 100
+    .imputs
+      width: 250px
+      margin: 0 auto
+      margin-bottom: 20px
+      label, input
+        width: 100%
+        display: inline-block
+        margin-bottom: 10px
+      input
+        outline: none
+        width: 100%
+        margin: 0 auto
+        padding: 10px
+        border: none
+        border-bottom: 1px solid #043133ab !important
+        box-sizing: border-box
+        text-align: left
+        caret-color: #043133ab
+        font-size: 16px
+        letter-spacing: 1px
+        transition: all 0.25s cubic-bezier(.53,.01,.35,1.5)
+        &:not([value=""])
+          background-color: #043133ab
+          border-radius: 10px
+          color: white
+          border: none
+        &:hover
+          padding: 15px
+    .submit
+      input[type="Submit"]
+        transition: all 0.25s cubic-bezier(.53,.01,.35,1.5)
+        border-radius: 10px
+        color: #043133ab
+        outline: none
+        padding: 10px
+        font-size: 16px
+        letter-spacing: 1px
+        &:hover
+          cursor: pointer
+          padding: 12px
+        &:focus
+          background-color: #043133ab
+          color: white
+          border: none      
   .tag-holder
     box-sizing: border-box
     width: 100%
@@ -69,7 +116,7 @@
     h4
       font-weight: lighter
       letter-spacing: 2px
-    ul
+    .blog-view-taglist
       margin: 30px
       margin-top: 10px
       overflow-x: scroll
@@ -81,14 +128,13 @@
       height: 100%
       li
         background-color: #04313361
-        border-radius: 10px
+        border-radius: 20px
         margin: 20px
+        padding: 5px 15px 5px 15px
         width: max-content
         height: 20px
         a
           text-decoration: none
           color: white
-          padding: 20px
           text-transform: capitalize
-          line-height: -10
-          vertical-align: middle
+          font-size: 15px

@@ -44,7 +44,7 @@ export const BlogPostTemplate = ({
           {tags && tags.length ? (
             <div style={{ marginTop: `4rem` }} className="tag-holder">
               <h4>Tags</h4>
-              <ul className="taglist">
+              <ul className="blog-view-taglist">
                 {tags.map(tag => (
                   <li key={tag + `tag`}>
                     <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>

@@ -39,43 +39,65 @@ export default class Subscribe extends Component {
         // I recommend setting data to React state
         // but you can do whatever you want
         console.log(data)
-        this.setState({data: data})
+        this.setState({
+          status: `success`,
+          msg: result.msg,
+        })
       })
       .catch(() => {
         // unnecessary because Mailchimp only ever
         // returns a 200 status code
         // see below for how to handle errors
+        this.setState({
+          status: `error`,
+          msg: err,
+        })
       })
   }
   
   render () {
     return (
 
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} id="subscribe">
 
         <h2>Subscribe for new posts</h2>
-
-        <label htmlFor="mce-EMAIL">Email Address</label>
-        <input 
-          type="email" 
-          value={this.state.value} 
-          name="EMAIL" 
-          className="required email" 
-          id="mce-EMAIL"
-          onChange={this.handleChange}
-        />
+        <div className="imputs">
+          <label htmlFor="mce-EMAIL">Email Address</label>
+          <input 
+            type="email" 
+            value={this.state.value} 
+            name="EMAIL" 
+            className="required email" 
+            id="mce-EMAIL"
+            onChange={this.handleChange}
+          />
+        </div>
+        <div className="submit">
+          <input type="submit" value="Subscribe" name="subscribe"/>
+        </div>
 
         <div id="mce-responses" className="clear">
-          <div className="response" id="error-response" ></div>
-          <div className="response" id="success-response" ></div>
+
+          {this.state.data.msg === `error` && (
+            <div
+              id="error-response"
+              className="response"
+              dangerouslySetInnerHTML={{ __html: this.state.data.msg }}
+            />
+          )}
+          
+          {this.state.status === "success" && (
+            <div 
+              id="success-response" 
+              className="response"
+            >Thank you! Youʼll receive your first email shortly.</div>  
+          )}
+          
         </div>    
+        
         {/* real people should not fill this in and expect good things - do not remove this or risk form bot signups */}
         <div style={hidden} aria-hidden="true"> 
           <input type="text" name="b_02172f0878bd5957e77543f09_b2369b9795" tabIndex="-1" value=""/>
-        </div>
-        
-        <div>
-          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" className="button" />
         </div>
       </form>
 

@@ -62,7 +62,7 @@ export default class Subscribe extends Component {
 
         <h2>Subscribe for new posts</h2>
         <div className="imputs">
-          <label htmlFor="mce-EMAIL">Email Address</label>
+          <label htmlFor="mce-EMAIL">Email Address:</label>
           <input 
             type="email" 
             value={this.state.value} 

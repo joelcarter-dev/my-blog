@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import Content, { HTMLContent } from '../components/Content'
 import Subscribe from '../components/Subscribe'
+import Plugs from '../components/Plugs'
 
 import Img from 'gatsby-image'
 
@@ -53,8 +54,7 @@ export const BlogPostTemplate = ({
               </ul>
             </div>
           ) : null}
-
-
+      <Plugs />
     </section>
   )
 }

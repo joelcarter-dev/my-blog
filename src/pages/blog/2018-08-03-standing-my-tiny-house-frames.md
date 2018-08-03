@@ -25,3 +25,5 @@ In the end, dad and I just stood them up. It was really quite simple. We stood t
 This was the moment I'd been waiting for to see if the interior design I had in mind would, well, fit. Thankfully it seems like it will. Though its going to be _cozy_ I had a wave of new ideas and possibilities. Being in the three dimensional, to scale is the only way to really get an accurate assessment of what you can do. I saw that I have more room on the walls for art than I thought, but my floor space would be crowded if I added a small kitchen. I've been gleefully contemplating angles for projector and computer screens from different places, and - what I think to be - a very clever bed and lounge area that will also act as my mass storage. My windows are also looking to be very good for the current location. Though expensive, the larger size will not make the house feel closed, but it will open. Combined with my french door I have stored in the shed, the house should open right out into a deck and have a direct view of the torlesse gap.
 
 ![The view from my back window on the day](/src/pages/img/dsc06317-2.jpg)
+
+  Next job is ecoply, then the roof.

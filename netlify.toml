@@ -4,9 +4,3 @@
 [build.environment]
   YARN_VERSION = "1.3.2"
   YARN_FLAGS = "--no-ignore-optional"
-
-[[redirects]]
-  from = "https://tinywords.netlify.com/"
-  to = "https://tinywords.me/"
-  status = 200
-  force = true

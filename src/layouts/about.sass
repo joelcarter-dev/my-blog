@@ -9,6 +9,8 @@
   overflow: hidden
   background-repeat: no-repeat
   background-size: cover
+  @media all and (max-width: 500px)
+    height: 50vh
   .overlay
     position: absolute
     height: 100%
@@ -37,3 +39,5 @@
           text-transform: uppercase
           cursor: pointer
           letter-spacing: 3px
+          @media all and (max-width: 300px)
+            padding: 5px

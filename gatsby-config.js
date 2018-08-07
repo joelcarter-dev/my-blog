@@ -1,6 +1,5 @@
 const autoprefixer = require('autoprefixer');
 const browserslist = require('browserslist');
-const compactMq = require('postcss-compact-mq');
 
 module.exports = {
   siteMetadata: {
@@ -62,7 +61,6 @@ module.exports = {
       options: {
         postCssPlugins: [
           autoprefixer({ browsers: browserslist() }), 
-          compactMq(),
         ],
         precision: 8, // SASS default: 5
       },

@@ -3,9 +3,9 @@ const browserslist = require('browserslist');
 
 module.exports = {
   siteMetadata: {
-    title: 'Strange Words Blog',
+    title: 'Tiny Words',
     description: `A blog about what I get up to`,
-    siteUrl: `https://tinywords.netlify.com`,
+    siteUrl: `https://tinywords.me`,
   },
   plugins: [
   

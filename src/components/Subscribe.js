@@ -35,13 +35,13 @@ export default class Subscribe extends Component {
     e.preventDefault();
     console.log(e)
     addToMailchimp(this.state.value)
-      .then((data) => {
+      .then((result) => {
         // I recommend setting data to React state
         // but you can do whatever you want
-        console.log(data)
+        console.log(result)
         this.setState({
-          status: `success`,
-          msg: result.msg,
+          //status: `success`,
+          formResult: result
         })
       })
       .catch(() => {
@@ -49,8 +49,9 @@ export default class Subscribe extends Component {
         // returns a 200 status code
         // see below for how to handle errors
         this.setState({
-          status: `error`,
-          msg: err,
+          // status: `error`,
+          // msg: err,
+          formResult: result
         })
       })
   }
@@ -78,15 +79,15 @@ export default class Subscribe extends Component {
 
         <div id="mce-responses" className="clear">
 
-          {this.state.data.msg === `error` && (
+          {this.state.formResult.result === `error` && (
             <div
               id="error-response"
               className="response"
-              dangerouslySetInnerHTML={{ __html: this.state.data.msg }}
+              dangerouslySetInnerHTML={{ __html: this.state.formResult.msg }}
             />
           )}
           
-          {this.state.status === "success" && (
+          {this.state.formResult.result === "success" && (
             <div 
               id="success-response" 
               className="response"

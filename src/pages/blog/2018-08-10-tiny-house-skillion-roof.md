@@ -8,7 +8,7 @@ tags:
 type: tiny house
 featuredImage: ../img/dsc06344.jpg
 ---
-The last few weeks have been full on. I've clad the tiny house in ecoply for bracing, and we've installed rafters. The joists went on today. I've been feeling really good about it; though its been tough finding time for other things. Like documenting. Always glad I found time to take some pictures though, this time they came out rather well.
+The last few weeks have been full on. I've clad the tiny house in ecoply for bracing, and we've installed purlins. The joists went on today. I've been feeling really good about it; though its been tough finding time for other things. Like documenting. Always glad I found time to take some pictures though, this time they came out rather well.
 
 ![carrying joists to the site](/src/pages/img/dsc06333.jpg)
 

@@ -15,3 +15,5 @@ Twenty minutes before the materials for my roof arrived, it abruptly started pou
 We stacked all the colour steel sheets together flush, marked out the screw placement, and drilled all the holes in one go. This is a very accurate and time effective way to pre-drill and ensures that every sheet has a hole in the same place. This also means that any hole placed wrong will affect every sheet. Thankfully, not only did all the holes (roughly) line up, but we had just enough roof screws to tack the steel sheets down firmly until more arrive.
 
 ![Deep dark colour steel roofing for a tiny house](/src/pages/img/dsc06385.jpg)
+
+It's time now to put the leftover insulation saved from the cabin to good use. This will be a satisfying job, and a potentially vital step to get done as soon as possible. We have a tenant lined up for the house I'm staying in now. It looks like I might be camping for a while until our rental situation sorts itself out. It sounds like a fun little camping trip (I can feel like a real starving artist), though a little dark until I can afford some windows.

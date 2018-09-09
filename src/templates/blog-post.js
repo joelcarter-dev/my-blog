@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
@@ -6,58 +6,87 @@ import Link from 'gatsby-link'
 import Content, { HTMLContent } from '../components/Content'
 import Subscribe from '../components/Subscribe'
 import Plugs from '../components/Plugs'
-
+import BackArrow from '../components/BackArrow'
 import Img from 'gatsby-image'
 
+export class BlogPostTemplate extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      width: 0, 
+      height: 0,
+      darkArrow: false
+    }
+  }
+  
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+  
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener('resize', this.updateWindowDimensions)
+  }
+  
+  handleScroll = () => {
+    let offsetTop = Math.abs(this.instance.getBoundingClientRect().top)
+    if (offsetTop >= 360) {
+      this.setState({darkArrow: true})
+    } else {
+      this.setState({darkArrow: false})
+    }
+  }
+  
+  updateWindowDimensions = () => {
+    this.setState({ width: window.innerWidth, height: window.innerHeight })
+  }
+  
+  render() {
+    const PostContent = this.props.contentComponent || Content
 
-export const BlogPostTemplate = ({
-  content,
-  contentComponent,
-  description,
-  tags,
-  title,
-  helmet,
-  featuredImage,
-}) => {
-  const PostContent = contentComponent || Content
+    return (
+      <section className="blog-view" ref={(el) => this.instance = el}>
+        {this.props.helmet || ''}
 
-  return (
-    <section className="blog-view">
-      {helmet || ''}
-
-        <div className="header">
-         {featuredImage && <Img sizes={featuredImage.childImageSharp.sizes} />}
-        <Link to="/" id="arrow" />
-         <div className="overlay"></div>
-          <div className="title-holder">
-            <div className="holder">
-              <h1 className="title">
-                {title}
-              </h1>
-              <p>{description}</p>
+          <div className="header">
+           {this.props.featuredImage && <Img sizes={this.props.featuredImage.childImageSharp.sizes} />}
+           
+          <BackArrow dark={this.state.darkArrow}/>
+          
+           <div className="overlay"></div>
+            <div className="title-holder">
+              <div className="holder">
+                <h1 className="title">
+                  {this.props.title}
+                </h1>
+                <p>{this.props.description}</p>
+              </div>
             </div>
           </div>
-        </div>
-          <PostContent content={content} className="post-content"/>
-          
-          <Subscribe />
-          
-          {tags && tags.length ? (
-            <div style={{ marginTop: `4rem` }} className="tag-holder">
-              <h4>Tags</h4>
-              <ul className="blog-view-taglist">
-                {tags.map(tag => (
-                  <li key={tag + `tag`}>
-                    <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
-      <Plugs />
-    </section>
-  )
+            <PostContent content={this.props.content} className="post-content"/>
+            
+            <Subscribe />
+            
+            {this.props.tags && this.props.tags.length ? (
+              <div style={{ marginTop: `4rem` }} className="tag-holder">
+                <h4>Tags</h4>
+                <ul className="blog-view-taglist">
+                  {this.props.tags.map(tag => (
+                    <li key={tag + `tag`}>
+                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+        <Plugs />
+      </section>
+    )
+  }
 }
+
+
 
 BlogPostTemplate.propTypes = {
   content: PropTypes.string.isRequired,

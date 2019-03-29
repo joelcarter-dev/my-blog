@@ -69,7 +69,7 @@ export default class IndexPage extends React.Component {
         </div>
         </section>
 
-        <BlogFeed 
+        <BlogFeed
           postData={this.state.blogFeed} 
           title={this.state.currentType}
           toggleOrder={this.toggleOrder}
@@ -123,5 +123,4 @@ query IndexQuery {
     }
   }
 }
-
 `
